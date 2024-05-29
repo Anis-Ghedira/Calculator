@@ -1,0 +1,120 @@
+:root {
+  --bg-color: rgb(189, 212, 220);
+  --calculator-color: rgb(4, 45, 75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--calculator-color);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 20px;
+  max-width: 320px;
+}
+
+.calculator .display input {
+  height: 200px;
+  width: 100%;
+  text-align: right;
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid white;
+  animation: anime 0.5s alternate infinite;
+}
+
+@keyframes anime {
+  0% {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  25% {
+    border: 5px solid rgba(255, 255, 255, 0.4);
+  }
+
+  50% {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+
+  75% {
+    border: 5px solid rgba(255, 255, 255, 0.6);
+  }
+
+  100% {
+    border: 5px solid rgba(255, 255, 255, 0.8);
+  }
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  background-color: transparent;
+  margin: 8px 5px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.2),
+    5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2),
+    -5px -5px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+#equal,
+#reset {
+  width: 138px;
+}
+
+#equal {
+  background-color: rgba(227, 123, 3, 0.7);
+  box-shadow: -5px -5px 5px rgba(227, 123, 3, 0.3),
+    5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#equal:hover {
+  background-color: rgb(227, 123, 3);
+  box-shadow: 5px 5px 5px rgba(227, 123, 3, 0.3),
+    -5px -5px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  transform: all 0.5s;
+}
+
+.icone::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f55a";
+  font-size: 1.2rem;
+}
